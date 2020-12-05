@@ -64,7 +64,7 @@ Resources:
                     wget ${AppS3Bucket}
                     systemctl start apache2.service
 
-            ImageId: ami-005bdb005fb00e791
+            ImageId: ami-07dd19a7900a1f049
             SecurityGroups:
                 - Ref: WebServerSecGroup
             InstanceType: t3.medium
