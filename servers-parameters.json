@@ -1,0 +1,10 @@
+[
+	{
+		"ParameterKey": "EnvironmentName",
+		"ParameterValue": "Udagram"
+    },
+    {
+        "ParameterKey": "AppS3Bucket",
+        "ParameterValue": "https://udagram-tamjid.s3-us-west-2.amazonaws.com/index.html"
+    }
+]

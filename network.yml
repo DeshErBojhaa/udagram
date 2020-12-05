@@ -47,7 +47,7 @@ Resources:
         Type: AWS::EC2::InternetGateway
         Properties:
             Tags:
-                - Key: keyname
+                - Key: Name
                   Value: !Ref EnvironmentName
     AttachGateway:
         Type: AWS::EC2::VPCGatewayAttachment
@@ -202,13 +202,13 @@ Outputs:
             Name: !Sub ${EnvironmentName}-PUB-RT
 
     VPCPrivateRouteTable1:
-        Description: Private Routing AZ1
+        Description: Private Routing AZ0
         Value: !Ref PrivateRouteTable1
         Export:
             Name: !Sub ${EnvironmentName}-PRI1-RT
 
     VPCPrivateRouteTable2:
-        Description: Private Routing AZ2
+        Description: Private Routing AZ1
         Value: !Ref PrivateRouteTable2
         Export:
             Name: !Sub ${EnvironmentName}-PRI2-RT
@@ -225,3 +225,26 @@ Outputs:
         Export:
             Name: !Sub ${EnvironmentName}-PRIV-NETS
 
+    PublicSubnet1:
+        Description: A reference to the public subnet in the 1st Availability Zone
+        Value: !Ref PublicSubnet1
+        Export:
+            Name: !Sub ${EnvironmentName}-PUB1-SN
+
+    PublicSubnet2:
+        Description: A reference to the public subnet in the 2nd Availability Zone
+        Value: !Ref PublicSubnet2
+        Export:
+            Name: !Sub ${EnvironmentName}-PUB2-SN
+
+    PrivateSubnet1:
+        Description: A reference to the private subnet in the 1st Availability Zone
+        Value: !Ref PrivateSubnet1
+        Export:
+            Name: !Sub ${EnvironmentName}-PRI1-SN
+
+    PrivateSubnet2:
+        Description: A reference to the private subnet in the 2nd Availability Zone
+        Value: !Ref PrivateSubnet2
+        Export:
+            Name: !Sub ${EnvironmentName}-PRI2-SN
